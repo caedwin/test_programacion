@@ -6,6 +6,8 @@
    // print_r($cliente);
 ?>
 
+
+
   <main class="container" >
         <h2 class="my-3 text-center">Contáctanos</h2>
 
@@ -33,9 +35,12 @@
         ?>
 
         <?php 
-            if(isset($_GET['message']) and $_GET['message'] == 'email'){
+            if(isset($_GET['message']) and $_GET['message'] == '101'){
         ?>
-            <strong>La dirección de correo no es válido!!! Vuelva a intentarlo</strong>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Error!</strong> Correo electrónico errado!!! Vuelva a intentarlo.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         <?php 
             }
         ?>
@@ -54,6 +59,7 @@
                 <input type="text" class="form-control" name="dni" placeholder="12345678">
                 <label for="email" class="form-label">Correo Electronico</label>
                 <input  type="email" class="form-control" name="email" id="email" placeholder="ejemplo@dominio.com">
+                
                 <label for="message" class="form-label">Mensaje</label>
                 <textarea class="form-control mb-3" name="mensaje" rows="3" placeholder='Escribe el mensaje aquí'></textarea>
             </div>
@@ -65,5 +71,13 @@
         
 
   </main>
+
+  <?php 
+            if (filter_var($email_a, FILTER_VALIDATE_EMAIL)) {
+        ?>
+            <strong>"Esta dirección de correo es válida."</strong>
+     <?php 
+        }
+    ?>
   
 <?php include 'template/footer.php' ?>
