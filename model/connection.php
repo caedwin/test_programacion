@@ -2,7 +2,7 @@
 
 $host = 'localhost';
 $user = 'root';
-$password = '';
+$password = 's3C@M_1977**1';
 $database = 'programacion';
 
 try {

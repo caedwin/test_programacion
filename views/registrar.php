@@ -1,8 +1,6 @@
 <?php
 
     // print_r($_POST);
-    
-    
     $email = $_POST["email"];
    
     try {
@@ -12,7 +10,7 @@
             exit();
         }
 
-        $patron = "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$";
+        $patron = '/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/';
         if ( ! preg_match($patron , $email) ) {
             header('Location: ../index.php?message=101'); /// correo inválido
             exit();
