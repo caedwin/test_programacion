@@ -1,4 +1,4 @@
-# test_programacion
+# test_programación
 
 Para Ingresar a los archivos ir a la carpeta Master como se muestra en la imagen
 
